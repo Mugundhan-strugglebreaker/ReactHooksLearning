@@ -5,7 +5,7 @@ function HookCounterFour() {
     const addValue = ()=>{
         setItem([...items,{
             id : items.length,
-            value : Math.floor(Math.random() * 1000)+1
+            value : 'Example'
         }])
     }
     return (

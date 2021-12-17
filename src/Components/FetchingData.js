@@ -35,5 +35,4 @@ function FetchingData() {
         </div>
     )
 }
-
 export default FetchingData
