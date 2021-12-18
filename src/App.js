@@ -10,19 +10,44 @@ import HookContainer from './Components/HookContainer';
 import IntervalHookCounter from './Components/IntervalHookCounter';
 import FetchingData from './Components/FetchingData';
 import ComponentC from './Components/ComponentC';
-import React from 'react';
+import React, { useReducer } from 'react';
 import Example from './Components/Example';
 import CounterOne from './Components/CounterOne';
 import CounterTwo from './Components/CounterTwo';
 import CounterThree from './Components/CounterThree';
+import AComponent from './Components/AComponent';
+import BComponent from './Components/BComponent';
+import CComponent from './Components/CComponent';
 
 export const UserContext = React.createContext()
 export const PhoneContext = React.createContext()
 
+export const CounterContext = React.createContext()
+
+const initialState = 0;
+const reducer =(state,action)=>{
+    switch (action) {
+        case 'increment':
+            return state + 1
+        case 'decrement':
+            return state - 1
+        case 'reset':
+            return initialState
+        default:
+            return state;
+    }
+}
+
 function App() {
+  const [count,dispath] = useReducer(reducer,initialState)
   return (
     <div className="App">
-      <CounterThree></CounterThree>
+      <CounterContext.Provider value={{countState : count , dispathState : dispath}}>
+        <AComponent></AComponent>
+        <BComponent></BComponent>
+        <CComponent></CComponent>
+      </CounterContext.Provider>
+      {/* <CounterThree></CounterThree> */}
       {/* <CounterTwo></CounterTwo> */}
       {/* <CounterOne></CounterOne> */}
       {/* <Example></Example> */}
@@ -41,6 +66,7 @@ function App() {
                  </PhoneContext.Provider>
       </UserContext.Provider> */}
     </div>
+
   );
 }
 
