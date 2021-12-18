@@ -18,6 +18,17 @@ import CounterThree from './Components/CounterThree';
 import AComponent from './Components/AComponent';
 import BComponent from './Components/BComponent';
 import CComponent from './Components/CComponent';
+import FetchingDataOne from './Components/FetchingDataOne';
+import FetchingTwo from './Components/FetchingTwo';
+import ParentComponent from './ParentComponent';
+import UseMemoCounter from './Components/UseMemoCounter';
+import FocusInput from './Components/FocusInput';
+import HookTimer from './Components/HookTimer';
+import DocTitleOne from './Components/DocTitleOne';
+import DocTitleTwo from './DocTitleTwo';
+import CountTwo from './Components/CountTwo';
+import CountOne from './Components/CountOne';
+import UserForm from './Components/UserForm';
 
 export const UserContext = React.createContext()
 export const PhoneContext = React.createContext()
@@ -42,11 +53,22 @@ function App() {
   const [count,dispath] = useReducer(reducer,initialState)
   return (
     <div className="App">
-      <CounterContext.Provider value={{countState : count , dispathState : dispath}}>
+      <UserForm></UserForm>
+      {/* <CountOne></CountOne> */}
+      {/* <CountTwo></CountTwo> */}
+      {/* <DocTitleOne></DocTitleOne> */}
+      {/* <DocTitleTwo></DocTitleTwo> */}
+      {/* <HookTimer></HookTimer> */}
+      {/* <FocusInput></FocusInput> */}
+      {/* <UseMemoCounter></UseMemoCounter> */}
+      {/* <ParentComponent></ParentComponent> */}
+      {/* <FetchingTwo></FetchingTwo> */}
+      {/* <FetchingDataOne></FetchingDataOne> */}
+      {/* <CounterContext.Provider value={{countState : count , dispathState : dispath}}>
         <AComponent></AComponent>
         <BComponent></BComponent>
         <CComponent></CComponent>
-      </CounterContext.Provider>
+      </CounterContext.Provider> */}
       {/* <CounterThree></CounterThree> */}
       {/* <CounterTwo></CounterTwo> */}
       {/* <CounterOne></CounterOne> */}
